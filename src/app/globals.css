@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --black: #0a0a0a;
+  --white: #f5f5f2;
+  --grey-dark: #3a3a3a;
+  --grey-mid: #8a8a8a;
+}
+
+/* Mendaftarkan warna & font agar bisa dipakai sebagai class Tailwind */
+@theme inline {
+  --color-ink: var(--black);
+  --color-paper: var(--white);
+  --color-grey-dark: var(--grey-dark);
+  --color-grey-mid: var(--grey-mid);
+  --font-display: var(--f-display);
+  --font-body: var(--f-body);
+  --font-accent: var(--f-accent);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--black);
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--f-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Garis bawah yang "digambar" dari kiri ke kanan saat hover */
+.link-draw {
+  position: relative;
+  padding-block: 0.5rem; /* memperbesar area sentuh di HP */
+}
+.link-draw::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.25rem;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.link-draw:hover::after {
+  transform: scaleX(1);
+}
+
+/* Titik status berkedip pelan */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Grain tipis di seluruh halaman */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Kata awalnya redup. Tanpa ini, teks sempat tampil terang sebelum JS jalan. */
+.reveal-word {
+  opacity: 0.15;
+  display: inline-block;
+}
