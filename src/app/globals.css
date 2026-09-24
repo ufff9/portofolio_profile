@@ -87,3 +87,144 @@ body::before {
   opacity: 0.15;
   display: inline-block;
 }
+
+/* Kondisi awal: turun sedikit dan transparan */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.7s cubic-bezier(0.65, 0, 0.35, 1),
+    transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Class ini ditambah/dihapus oleh IntersectionObserver */
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hormati pengguna yang meminta animasi dikurangi */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Garis digambar dengan trik stroke-dash:
+   pathLength=1 -> panjang garis dianggap 1, dash 1 = satu garis penuh.
+   dashoffset 1 = tersembunyi, 0 = terlihat penuh. */
+.skill-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition:
+    stroke-dashoffset 1.2s cubic-bezier(0.65, 0, 0.35, 1),
+    stroke 0.3s ease;
+}
+.is-in .skill-line {
+  stroke-dashoffset: 0;
+}
+
+.skill-node {
+  opacity: 0;
+  transition:
+    opacity 0.6s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+.is-in .skill-node {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-line {
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+  .skill-node {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+/* Tombol dengan sudut kanan-atas dan kiri-bawah dipotong miring */
+.btn-cut {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 14px) 0,
+    100% 14px,
+    100% 100%,
+    14px 100%,
+    0 calc(100% - 14px)
+  );
+  transition:
+    background 0.3s ease,
+    letter-spacing 0.3s ease;
+}
+.btn-cut:hover {
+  background: #d8d8d4;
+  letter-spacing: 0.02em;
+}
+
+/* Mencegah scroll ke samping akibat elemen yang meluber sedikit.
+   "clip" lebih aman daripada "hidden" karena tidak merusak position: sticky. */
+html,
+body {
+  overflow-x: clip;
+}
+
+html {
+  -webkit-text-size-adjust: 100%; /* iOS tidak membesarkan teks sendiri */
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Area sentuh link garis-bawah dibuat 44px (20px teks + 2 x 12px) */
+.link-draw {
+  padding-block: 0.75rem;
+}
+
+/* Kotak logo sosial media */
+.social-tile {
+  /* Latar putih digambar sebagai gradien; awalnya tingginya 0% (tak terlihat) */
+  background-image: linear-gradient(var(--white), var(--white));
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 0%;
+  transition:
+    background-size 0.4s cubic-bezier(0.65, 0, 0.35, 1),
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1); /* sedikit memantul */
+}
+
+/* Fokus keyboard dan sentuhan di HP */
+.social-tile:focus-visible,
+.social-tile:active {
+  background-size: 100% 100%;
+  color: var(--black);
+  border-color: var(--white);
+  transform: rotate(-6deg) scale(1.06);
+}
+
+/* Hover hanya untuk perangkat yang benar-benar punya kursor,
+   supaya di HP tidak "menyangkut" setelah disentuh */
+@media (hover: hover) {
+  .social-tile:hover {
+    background-size: 100% 100%;
+    color: var(--black);
+    border-color: var(--white);
+    transform: rotate(-6deg) scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-tile {
+    transition: none;
+  }
+  .social-tile:hover,
+  .social-tile:focus-visible,
+  .social-tile:active {
+    transform: none;
+  }
+}

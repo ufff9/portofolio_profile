@@ -22,33 +22,52 @@ export default function ScrollReveal({
   useGSAP(
     () => {
       const spans = gsap.utils.toArray<HTMLElement>(".reveal-word");
+      const mm = gsap.matchMedia();
 
-      // Pengguna yang meminta animasi dikurangi: langsung tampil terang
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        gsap.set(spans, { opacity: 1 });
-        return;
-      }
-
-      // ===== ANIMASI SCROLL (ubah di sini) =====
-      gsap.fromTo(
-        spans,
-        { opacity: 0.15 }, // kondisi awal: redup
+      mm.add(
         {
-          opacity: 1,      // kondisi akhir: terang
-          ease: "none",
-          duration: 3,     // lama tiap kata (satuan relatif)
-          stagger: 1,      // jeda antar kata. duration/stagger = 3
-                           // -> sekitar 3 kata sedang "menyala" bersamaan
-          scrollTrigger: {
-            trigger: el.current,
-            start: "top 80%",   // mulai saat atas paragraf di 80% tinggi layar
-            end: "bottom 45%",  // selesai saat bawah paragraf di 45% tinggi layar
-            scrub: true,        // terikat scroll, otomatis dua arah
-          },
-        }
+          reduce: "(prefers-reduced-motion: reduce)",
+          mobile:
+            "(max-width: 767px) and (prefers-reduced-motion: no-preference)",
+          desktop:
+            "(min-width: 768px) and (prefers-reduced-motion: no-preference)",
+        },
+        (context) => {
+          const { reduce, mobile } = context.conditions as Record<
+            string,
+            boolean
+          >;
+
+          // Pengguna minta animasi dikurangi: langsung terang, tanpa animasi
+          if (reduce) {
+            gsap.set(spans, { opacity: 1 });
+            return;
+          }
+
+          // ===== ANIMASI SCROLL (ubah di sini) =====
+          // HP: paragraf jadi lebih tinggi, jadi rentang scroll dipersingkat
+          gsap.fromTo(
+            spans,
+            { opacity: 0.15 },
+            {
+              opacity: 1,
+              ease: "none",
+              duration: 3,
+              stagger: 1,
+              scrollTrigger: {
+                trigger: el.current,
+                start: mobile ? "top 85%" : "top 80%",
+                end: mobile ? "bottom 60%" : "bottom 45%",
+                scrub: true,
+              },
+            },
+          );
+        },
       );
+
+      return () => mm.revert();
     },
-    { scope: el, dependencies: [text] }
+    { scope: el, dependencies: [text] },
   );
 
   return (

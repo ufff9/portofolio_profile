@@ -18,7 +18,7 @@ export default function About() {
 
         <ScrollReveal
           text={about.paragraph}
-          className="font-display text-[clamp(1.5rem,3.6vw,3.5rem)] font-bold leading-[1.1] tracking-tight md:col-span-8 md:col-start-5"
+          className="font-body text-[clamp(1.125rem,2.2vw,1.875rem)] font-light leading-[1.4] tracking-normal md:col-span-8 md:col-start-5"
         />
       </div>
     </section>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import {
   Bricolage_Grotesque,
   IBM_Plex_Sans,
@@ -26,8 +26,21 @@ const accent = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "[NAMA_LENGKAP] — [ROLE/JABATAN]",
-  description: "Portofolio [NAMA_LENGKAP]",
+  title: "Muhammad Rauf Putra — Frontend Developer",
+  description:
+    "Portofolio Muhammad Rauf Putra: proyek, pengalaman, dan kontak.",
+  openGraph: {
+    title: "Muhammad Rauf Putra — Frontend Developer",
+    description: "Portofolio, proyek, dan kontak.",
+    type: "website",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover", // konten boleh meluas sampai ke bawah poni
+  themeColor: "#0a0a0a", // bar browser di HP ikut hitam
 };
 
 export default function RootLayout({
