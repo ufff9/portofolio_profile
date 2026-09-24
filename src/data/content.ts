@@ -210,25 +210,26 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "p1",
-    title: "Aplikasi POS",
+    title: "Landing Page Rumah Tahfiz",
     year: "2026",
     description:
-      "Aplikasi Point of Sale untuk toko ritel berbasis scan barcode.",
-    stack: ["Flutter", "Dart", "Firebase"],
-    github: "https://github.com/ufff9/app.adibahshop.git",
-    live: "#",
-    image: "/",
+      "website landing page rumah tahfiz untuk menampilkan kegiatan, galeri, serta program dari rumah tahfiz.",
+    stack: ["Next.js", "React", "TypeScript"],
+    github: "https://github.com/ufff9/yayasan-darul-mahani.git",
+    live: "https://yayasan-darul-mahani.vercel.app/",
+    image: "/project2.png",
     size: "featured",
   },
   {
     id: "p2",
-    title: "[JUDUL_PROYEK_2]",
-    year: "2025",
-    description: "[DESKRIPSI_2] Satu-dua kalimat tentang proyek ini.",
-    stack: ["React", "Node.js"],
-    github: "#",
-    live: "#",
-    image: null,
+    title: "Dashboard Prediksi Emas",
+    year: "2026",
+    description:
+      "Menampilkan dashboard grafik prediksi harga emas dengan indikator teknikal, dengan menggunakan algoritma Linear Regression, Random Frest, dan XGBoost.",
+    stack: ["Python", "Streamlit"],
+    github: "https://github.com/ufff9/prediksiemas.git",
+    live: "https://goldpredictionpp.streamlit.app",
+    image: "/gold.png",
     size: "wide",
   },
   {
@@ -300,7 +301,11 @@ export const contact = {
 export const socials = [
   { label: "GitHub", href: "https://github.com/ufff9", Icon: FaGithub },
   { label: "LinkedIn", href: "#", Icon: FaLinkedinIn },
-  { label: "Instagram", href: "#", Icon: FaInstagram },
-  { label: "TikTok", href: "tiktok.com/@ufffpp", Icon: FaTiktok },
+  {
+    label: "Instagram",
+    href: "https://instagram.com/@mhmd.rfptra",
+    Icon: FaInstagram,
+  },
+  { label: "TikTok", href: "https://tiktok.com/@ufffpp", Icon: FaTiktok },
   { label: "X", href: "#", Icon: FaXTwitter },
 ];
