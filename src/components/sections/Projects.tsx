@@ -39,7 +39,9 @@ export default function Projects() {
       <h2 className="mb-14 font-display text-[clamp(2.5rem,8vw,7rem)] font-extrabold uppercase leading-[0.85] tracking-tighter">
         Recent
         <br />
-        <span className="font-accent font-normal normal-case italic">projects</span>
+        <span className="font-accent font-normal normal-case italic">
+          projects
+        </span>
       </h2>
 
       {/* Bento grid: 1 kolom di HP, 12 kolom di desktop */}
@@ -55,7 +57,9 @@ export default function Projects() {
         <div className="mt-14 flex justify-center">
           <button
             type="button"
-            onClick={() => setVisible((v) => Math.min(v + STEP, projects.length))}
+            onClick={() =>
+              setVisible((v) => Math.min(v + STEP, projects.length))
+            }
             className="btn-cut group inline-flex min-h-[48px] items-center gap-4 bg-paper px-8 text-sm font-medium lowercase text-ink"
           >
             load more ({remaining})
@@ -69,7 +73,13 @@ export default function Projects() {
   );
 }
 
-function ProjectCard({ project: p, index }: { project: Project; index: number }) {
+function ProjectCard({
+  project: p,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) {
   const featured = p.size === "featured";
 
   return (
@@ -108,46 +118,86 @@ function ProjectCard({ project: p, index }: { project: Project; index: number })
         </ul>
 
         <div className="mt-6 flex gap-6 text-sm">
-          <a href={p.github} target="_blank" rel="noreferrer" className="link-draw">
+          <a
+            href={p.github}
+            target="_blank"
+            rel="noreferrer"
+            className="link-draw"
+          >
             github ↗
           </a>
-          <a href={p.live} target="_blank" rel="noreferrer" className="link-draw">
+          <a
+            href={p.live}
+            target="_blank"
+            rel="noreferrer"
+            className="link-draw"
+          >
             live demo ↗
           </a>
         </div>
       </div>
 
-      {/* Mockup browser */}
-      <div
-        className={`overflow-hidden border border-grey-dark bg-ink transition-transform duration-500 group-hover:-translate-y-1 ${
-          featured ? "md:w-3/5" : "mt-auto"
-        }`}
-      >
-        <div className="flex items-center gap-1.5 border-b border-grey-dark px-3 py-2">
-          <span className="h-2 w-2 rounded-full bg-grey-dark" />
-          <span className="h-2 w-2 rounded-full bg-grey-dark" />
-          <span className="h-2 w-2 rounded-full bg-grey-dark" />
-          <span className="ml-3 truncate text-[10px] text-grey-mid">
-            {p.live === "#" ? "localhost" : p.live.replace(/^https?:\/\//, "")}
-          </span>
-        </div>
-
-        <div className="relative aspect-[16/10] w-full">
-          {p.image ? (
-            <Image
-              src={p.image}
-              alt={`Tampilan ${p.title}`}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover grayscale transition duration-500 group-hover:grayscale-0"
-            />
-          ) : (
-            <div className="flex h-full w-full items-center justify-center text-xs text-grey-mid [background:repeating-linear-gradient(135deg,transparent_0_10px,#1a1a1a_10px_11px)]">
-              [SCREENSHOT]
-            </div>
-          )}
-        </div>
+      {/* Pembungkus mockup: hanya mengatur POSISI */}
+      <div className={featured ? "md:w-3/5" : "mt-auto"}>
+        {p.device === "phone" ? (
+          <PhoneMockup src={p.image} title={p.title} />
+        ) : (
+          <BrowserMockup project={p} />
+        )}
       </div>
     </article>
+  );
+}
+
+function BrowserMockup({ project: p }: { project: Project }) {
+  return (
+    <div className="overflow-hidden border border-grey-dark bg-ink transition-transform duration-500 group-hover:-translate-y-1">
+      <div className="flex items-center gap-1.5 border-b border-grey-dark px-3 py-2">
+        <span className="h-2 w-2 rounded-full bg-grey-dark" />
+        <span className="h-2 w-2 rounded-full bg-grey-dark" />
+        <span className="h-2 w-2 rounded-full bg-grey-dark" />
+        <span className="ml-3 truncate text-[10px] text-grey-mid">
+          {p.live === "#" ? "localhost" : p.live.replace(/^https?:\/\//, "")}
+        </span>
+      </div>
+
+      <div className="relative aspect-[16/10] w-full">
+        {p.image ? (
+          <Image
+            src={p.image}
+            alt={`Tampilan ${p.title}`}
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover grayscale transition duration-500 group-hover:grayscale-0"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center text-xs text-grey-mid [background:repeating-linear-gradient(135deg,transparent_0_10px,#1a1a1a_10px_11px)]">
+            [SCREENSHOT]
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function PhoneMockup({ src, title }: { src: string | null; title: string }) {
+  return (
+    <div className="mx-auto w-[clamp(140px,55%,220px)] rounded-[1.75rem] border-2 border-grey-mid bg-ink p-1.5 transition-transform duration-500 group-hover:-translate-y-1">
+      <div className="relative aspect-[9/19.5] overflow-hidden rounded-[1.25rem]">
+        {src ? (
+          <Image
+            src={src}
+            alt={`Tampilan ${title}`}
+            fill
+            sizes="220px"
+            className="object-cover object-top grayscale transition duration-500 group-hover:grayscale-0"
+          />
+        ) : (
+          <div className="flex h-full items-center justify-center text-xs text-grey-mid">
+            [SCREENSHOT]
+          </div>
+        )}
+      </div>
+    </div>
   );
 }

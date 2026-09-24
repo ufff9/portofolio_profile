@@ -17,7 +17,7 @@ export default function GithubGraph({ username }: { username: string }) {
   if (!mounted) return <div className="min-h-[140px]" aria-hidden="true" />;
 
   return (
-    <div className="overflow-x-auto">
+    <div className="flex justify-center overflow-x-auto ">
       <GitHubCalendar
         username="ufff9"
         colorScheme="dark"

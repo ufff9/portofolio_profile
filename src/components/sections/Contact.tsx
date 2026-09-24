@@ -38,7 +38,7 @@ export default function Contact() {
           <CopyEmail email={contact.email} />
           <p className="text-sm text-ink/60">
             {profile.location} ·{" "}
-            {profile.available ? "open for work" : "currently busy"}
+            {profile.available ? "open for freelance projects" : "currently busy"}
           </p>
         </div>
       </Reveal>

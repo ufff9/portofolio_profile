@@ -91,7 +91,7 @@ export default function Skills() {
         </div>
 
         {/* Ikon-ikon */}
-        {skills.map(({ id, name, Icon, x, y }) => (
+        {skills.map(({ id, name, Icon, color, x, y }) => (
           <button
             key={id}
             type="button"
@@ -112,7 +112,7 @@ export default function Skills() {
                 : "border-grey-dark text-grey-mid"
             }`}
           >
-            <Icon />
+            <Icon color={color} />
           </button>
         ))}
       </div>

@@ -3,14 +3,13 @@ import { profile, socials } from "@/data/content";
 export default function Footer() {
   return (
     <footer className="px-5 pb-[max(2.5rem,env(safe-area-inset-bottom))] pt-16 md:px-10">
-      {/* Garis pembatas + label kecil, konsisten dengan section lain */}
       <div className="mb-10 flex items-baseline justify-between border-t border-grey-dark pt-4 text-xs text-grey-mid">
         <span>(06)</span>
         <span>find me on</span>
       </div>
 
-      <div className="grid gap-12 md:grid-cols-12 md:items-end">
-        {/* Deretan logo: kotak bersudut tajam, berbalik warna saat hover/tap */}
+      {/* Baris 1: ikon di kiri, hak cipta di kanan (grid hanya 2 anak) */}
+      <div className="grid gap-8 md:grid-cols-12 md:items-end">
         <ul className="flex flex-wrap gap-3 md:col-span-7">
           {socials.map(({ label, href, Icon }) => (
             <li key={label}>
@@ -28,16 +27,24 @@ export default function Footer() {
           ))}
         </ul>
 
-        <div className="flex flex-col gap-8 text-grey-mid md:col-span-4 md:col-start-9 md:items-end">
-          <a href="#hero" className="link-draw text-sm text-paper">
-            back to top ↑
-          </a>
-          <p className="text-xs md:text-right">
-            © {new Date().getFullYear()} {profile.nameLines.join(" ")}
-            <br />
-            dibuat dengan Next.js
-          </p>
-        </div>
+        <p className="text-xs text-grey-mid md:col-span-4 md:col-start-9 md:text-right">
+          © {new Date().getFullYear()} {profile.nameLines.join(" ")}
+          <br />
+          dibuat dengan Next.js
+        </p>
+      </div>
+
+      {/* Baris 2: tombol di baris sendiri, tepat di tengah halaman */}
+      <div className="mt-16 flex justify-center">
+        <a
+          href="#hero"
+          className="btn-cut group inline-flex min-h-[48px] items-center gap-4 whitespace-nowrap bg-paper px-8 text-sm font-medium lowercase text-ink"
+        >
+          back to top
+          <span className="transition-transform duration-300 group-hover:-translate-y-1">
+            ↑
+          </span>
+        </a>
       </div>
     </footer>
   );

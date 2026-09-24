@@ -9,6 +9,8 @@ import {
   SiGit,
   SiNodedotjs,
   SiLaravel,
+  SiFlutter,
+  SiPython,
 } from "react-icons/si";
 
 import {
@@ -38,35 +40,44 @@ export const navLinks = [
 
 export const about = {
   intro:
-    "[INTRO_SINGKAT] — satu-dua kalimat pengantar, tampil kecil di kolom kiri.",
-  // GANTI dengan paragraf aslimu. Makin panjang, makin terasa efek revealnya.
+    "Frontend developer dari Jambi, Indonesia. Suka mengubah desain menjadi antarmuka yang rapi, cepat, dan terasa hidup.",
   paragraph:
-    "[PARAGRAF_ABOUT] Halo, saya seorang developer yang suka membangun antarmuka web yang terasa hidup. Saya percaya desain yang baik lahir dari detail kecil: jarak huruf, ritme animasi, dan keputusan yang tidak terlihat. Saya belajar secara mandiri, dan setiap proyek adalah kesempatan untuk memahami sesuatu lebih dalam.",
+    "Halo, saya Rauf, frontend developer yang berbasis di Jambi. Saya membangun antarmuka web dengan React, Next.js, dan TypeScript, dengan perhatian pada hal-hal kecil: tipografi, jarak, dan ritme animasi. Bagi saya, desain yang baik sering terletak pada detail yang jarang disadari orang, tetapi terasa saat hilang. Saya terus belajar lewat membangun proyek nyata, dan saat ini terbuka untuk pekerjaan maupun kolaborasi.",
 };
 
 export const experiences = [
   {
-    period: "2024 — sekarang",
-    role: "[POSISI_1]",
-    company: "[PERUSAHAAN_1]",
+    period: "2025 — sekarang",
+    role: "Mahasiswa Semester Akhir",
+    company: "Universitas Dinamika Bangsa",
     description:
-      "[DESKRIPSI_1] Jelaskan apa yang kamu bangun dan dampaknya, dua sampai tiga kalimat.",
-    tags: ["React", "Next.js", "TypeScript"],
+      "Membuat projek yang lebih serius, Membuka Jasa Joki Projek seperti landing page, sistem informasi, dashboard, serta mempelajari AI .",
+    tags: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Laravel",
+      "AI",
+      "Tailwind",
+      "Node.js",
+      "Flutter",
+      "python",
+    ],
+  },
+  {
+    period: "2024 — 2025",
+    role: "Mahasiswa Semester Menengah",
+    company: "Universitas Dinamika Bangsa",
+    description:
+      "Memulai membangun proyek-proyek kecil dan belajar tentang pengembangan web dan aplikasi.",
+    tags: ["JavaScript", "Tailwind", "flutter", "Node.js", "Laravel"],
   },
   {
     period: "2023 — 2024",
-    role: "[POSISI_2]",
-    company: "[PERUSAHAAN_2]",
+    role: "Mahasiswa Semester Awal",
+    company: "Universitas Dinamika Bangsa",
     description:
-      "[DESKRIPSI_2] Fokus pada tanggung jawab utama dan hasil yang bisa diukur.",
-    tags: ["JavaScript", "Tailwind"],
-  },
-  {
-    period: "2022 — 2023",
-    role: "[POSISI_3]",
-    company: "[PERUSAHAAN_3]",
-    description:
-      "[DESKRIPSI_3] Pengalaman awal, magang, atau proyek freelance.",
+      "Memulai perjalanan akademik di bidang komputer dan mempelajari dasar-dasar pemrograman.",
     tags: ["HTML", "CSS"],
   },
 ];
@@ -79,8 +90,27 @@ export const skills = [
     name: "React",
     note: "[CATATAN: komponen, hooks, state]",
     Icon: SiReact,
+    color: "#61DAFB",
     x: 9,
     y: 10,
+  },
+  {
+    id: "flutter",
+    name: "Flutter",
+    note: "[CATATAN: framework UI]",
+    Icon: SiFlutter,
+    color: "#02569B",
+    x: 60,
+    y: 0,
+  },
+  {
+    id: "python",
+    name: "Python",
+    note: "[CATATAN: pemrograman berbasis objek]",
+    Icon: SiPython,
+    color: "#3776AB",
+    x: 40,
+    y: 0,
   },
   {
     id: "next",
@@ -95,6 +125,7 @@ export const skills = [
     name: "TypeScript",
     note: "[CATATAN: tipe data, keamanan kode]",
     Icon: SiTypescript,
+    color: "#3178C6",
     x: 7,
     y: 50,
   },
@@ -103,6 +134,7 @@ export const skills = [
     name: "JavaScript",
     note: "[CATATAN: fondasi bahasa]",
     Icon: SiJavascript,
+    color: "#F7DF1E",
     x: 15,
     y: 70,
   },
@@ -111,14 +143,16 @@ export const skills = [
     name: "Tailwind",
     note: "[CATATAN: styling utilitas]",
     Icon: SiTailwindcss,
-    x: 10,
-    y: 90,
+    color: "#06B6D4",
+    x: 40,
+    y: 100,
   },
   {
     id: "html",
     name: "HTML5",
     note: "[CATATAN: struktur semantik]",
     Icon: SiHtml5,
+    color: "#E34C26",
     x: 91,
     y: 12,
   },
@@ -127,6 +161,7 @@ export const skills = [
     name: "CSS3",
     note: "[CATATAN: layout, animasi]",
     Icon: SiCss,
+    color: "#1572B6",
     x: 83,
     y: 32,
   },
@@ -135,6 +170,7 @@ export const skills = [
     name: "Git",
     note: "[CATATAN: versi & kolaborasi]",
     Icon: SiGit,
+    color: "#F05032",
     x: 93,
     y: 52,
   },
@@ -143,6 +179,7 @@ export const skills = [
     name: "Node.js",
     note: "[CATATAN: backend dasar]",
     Icon: SiNodedotjs,
+    color: "#61DAFB",
     x: 85,
     y: 72,
   },
@@ -151,8 +188,9 @@ export const skills = [
     name: "Laravel",
     note: "[CATATAN: framework PHP]",
     Icon: SiLaravel,
-    x: 90,
-    y: 90,
+    color: "#FF2D20",
+    x: 60,
+    y: 100,
   },
 ];
 
@@ -166,19 +204,20 @@ export type Project = {
   live: string;
   image: string | null; // path di folder public, mis. "/projects/nama.jpg"
   size: "featured" | "wide" | "small";
+  device?: "browser" | "phone";
 };
 
 export const projects: Project[] = [
   {
     id: "p1",
-    title: "[JUDUL_PROYEK_1]",
+    title: "Aplikasi POS",
     year: "2026",
     description:
-      "[DESKRIPSI_1] Proyek unggulan. Jelaskan masalah yang dipecahkan, peranmu, dan hasilnya.",
-    stack: ["Next.js", "TypeScript", "Tailwind"],
-    github: "#",
+      "Aplikasi Point of Sale untuk toko ritel berbasis scan barcode.",
+    stack: ["Flutter", "Dart", "Firebase"],
+    github: "https://github.com/ufff9/app.adibahshop.git",
     live: "#",
-    image: null,
+    image: "/",
     size: "featured",
   },
   {
@@ -194,14 +233,16 @@ export const projects: Project[] = [
   },
   {
     id: "p3",
-    title: "[JUDUL_PROYEK_3]",
-    year: "2025",
-    description: "[DESKRIPSI_3] Satu-dua kalimat tentang proyek ini.",
-    stack: ["JavaScript", "CSS"],
-    github: "#",
+    title: "Aplikasi POS",
+    year: "2026",
+    description:
+      "Aplikasi Point of Sale untuk toko ritel berbasis scan barcode.",
+    stack: ["Flutter", "Dart", "SQLite"],
+    github: "https://github.com/ufff9/app.adibahshop.git",
     live: "#",
-    image: null,
     size: "small",
+    device: "phone",
+    image: "/pos.png",
   },
   {
     id: "p4",
@@ -252,7 +293,7 @@ export const projects: Project[] = [
 export const contact = {
   // Ganti dengan email aslimu. Tampilan email asli lebih panjang dari
   // placeholder, jadi cek ukurannya di HP setelah diganti.
-  email: "[EMAIL]",
+  email: "muhammadraufputra@gmail.com",
   headline: ["Let's work", "together."],
 };
 
@@ -260,6 +301,6 @@ export const socials = [
   { label: "GitHub", href: "https://github.com/ufff9", Icon: FaGithub },
   { label: "LinkedIn", href: "#", Icon: FaLinkedinIn },
   { label: "Instagram", href: "#", Icon: FaInstagram },
-  { label: "TikTok", href: "#", Icon: FaTiktok },
+  { label: "TikTok", href: "tiktok.com/@ufffpp", Icon: FaTiktok },
   { label: "X", href: "#", Icon: FaXTwitter },
 ];

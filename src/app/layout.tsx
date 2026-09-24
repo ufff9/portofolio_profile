@@ -3,6 +3,7 @@ import {
   Bricolage_Grotesque,
   IBM_Plex_Sans,
   Instrument_Serif,
+  Nunito_Sans,
 } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
@@ -12,7 +13,7 @@ const display = Bricolage_Grotesque({
   variable: "--f-display",
 });
 
-const body = IBM_Plex_Sans({
+const body = Nunito_Sans({
   subsets: ["latin"],
   weight: ["300", "400"],
   variable: "--f-body",
