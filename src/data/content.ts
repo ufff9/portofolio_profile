@@ -267,28 +267,6 @@ export const projects: Project[] = [
     image: null,
     size: "wide",
   },
-  {
-    id: "p6",
-    title: "[JUDUL_PROYEK_6]",
-    year: "2023",
-    description: "[DESKRIPSI_6] Satu-dua kalimat tentang proyek ini.",
-    stack: ["HTML", "CSS", "JavaScript"],
-    github: "#",
-    live: "#",
-    image: null,
-    size: "wide",
-  },
-  {
-    id: "p7",
-    title: "[JUDUL_PROYEK_7]",
-    year: "2023",
-    description: "[DESKRIPSI_7] Satu-dua kalimat tentang proyek ini.",
-    stack: ["React"],
-    github: "#",
-    live: "#",
-    image: null,
-    size: "small",
-  },
 ];
 
 export const contact = {
@@ -303,7 +281,7 @@ export const socials = [
   { label: "LinkedIn", href: "#", Icon: FaLinkedinIn },
   {
     label: "Instagram",
-    href: "https://instagram.com/@mhmd.rfptra",
+    href: "https://instagram.com/mhmd.rfptra",
     Icon: FaInstagram,
   },
   { label: "TikTok", href: "https://tiktok.com/@ufffpp", Icon: FaTiktok },
