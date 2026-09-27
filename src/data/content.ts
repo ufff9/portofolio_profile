@@ -24,7 +24,7 @@ import {
 export const profile = {
   // Nama dipecah per baris supaya bisa ditata asimetris
   nameLines: ["Muhammad", "Rauf", "Putra"],
-  role: "AI ENGINEER-MAHASISWA",
+  role: "MAHASISWA TEKNIK INFORMATIKA",
   location: "JAMBI, INDONESIA",
   available: true,
   initials: "RAUF",
@@ -270,8 +270,6 @@ export const projects: Project[] = [
 ];
 
 export const contact = {
-  // Ganti dengan email aslimu. Tampilan email asli lebih panjang dari
-  // placeholder, jadi cek ukurannya di HP setelah diganti.
   email: "muhammadraufputra@gmail.com",
   headline: ["Let's work", "together."],
 };

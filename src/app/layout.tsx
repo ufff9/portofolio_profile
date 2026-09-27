@@ -27,11 +27,11 @@ const accent = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Rauf Putra — Frontend Developer",
+  title: "Muhammad Rauf Putra — Teknik Informatika",
   description:
     "Portofolio Muhammad Rauf Putra: proyek, pengalaman, dan kontak.",
   openGraph: {
-    title: "Muhammad Rauf Putra — Frontend Developer",
+    title: "Muhammad Rauf Putra — Teknik Informatika",
     description: "Portofolio, proyek, dan kontak.",
     type: "website",
   },
