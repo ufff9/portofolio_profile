@@ -39,10 +39,9 @@ export const navLinks = [
 ];
 
 export const about = {
-  intro:
-    "Frontend developer dari Jambi, Indonesia. Suka mengubah desain menjadi antarmuka yang rapi, cepat, dan terasa hidup.",
+  intro: "Teknik Informatika | UNIVERSITAS DINAMIKA BANGSA.",
   paragraph:
-    "Halo, saya Rauf, frontend developer yang berbasis di Jambi. Saya membangun antarmuka web dengan React, Next.js, dan TypeScript, dengan perhatian pada hal-hal kecil: tipografi, jarak, dan ritme animasi. Bagi saya, desain yang baik sering terletak pada detail yang jarang disadari orang, tetapi terasa saat hilang. Saya terus belajar lewat membangun proyek nyata, dan saat ini terbuka untuk pekerjaan maupun kolaborasi.",
+    "Halo, saya Rauf, saya mahasiswa Teknik Informatika di UNIVERSITAS DINAMIKA BANGSA. Saya berfokus pada pengembanagan web, mobile, serta machine learning, dan saat ini saya sedang menuntaskan tugas akhir dengan tema RAG,sembari mengasah keterampilan saya dalam machine learning unttuk menghadirkan solusi toknologi yang bermanfaat dan efisien.",
 };
 
 export const experiences = [
@@ -78,7 +77,7 @@ export const experiences = [
     company: "Universitas Dinamika Bangsa",
     description:
       "Memulai perjalanan akademik di bidang komputer dan mempelajari dasar-dasar pemrograman.",
-    tags: ["HTML", "CSS"],
+    tags: ["HTML", "CSS", "JavaScript"],
   },
 ];
 
